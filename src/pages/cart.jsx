@@ -71,7 +71,7 @@ const Cart = () => {
                     >
                         <div className="flex items-center gap-4 col-span-2 lg:col-span-1">
                             <img
-                                src={`http://37.27.29.18:8002/images/${item.product.image}`}
+                                src={`https://store-api.softclub.tj/images/${item.product.image}`}
                                 alt={item.product.productName}
                                 className="w-[80px] h-[80px] object-cover rounded"
                             />

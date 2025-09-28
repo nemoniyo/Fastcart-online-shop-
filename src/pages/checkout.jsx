@@ -90,7 +90,7 @@ const Checkout = () => {
 											<div className='flex gap-3 items-center'>
 												<img
 													className='w-[50px] h-[40px] object-contain'
-													src={`http://37.27.29.18:8002/images/${elem.product.image}`}
+													src={`https://store-api.softclub.tj/images/${elem.product.image}`}
 												/>
 												<p>{elem.product.productName}</p>
 											</div>

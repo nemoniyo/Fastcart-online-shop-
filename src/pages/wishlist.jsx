@@ -21,7 +21,7 @@ export default function Wishlist({ wish, setWish }) {
                         className="border hoverArticle border-[whitesmoke] shadow-lg p-[20px] relative"
                     >
                         <img
-                            src={`http://37.27.29.18:8002/images/${el.image}`}
+                            src={`https://store-api.softclub.tj/images/${el.image}`}
                             alt={el.productName}
                             className="w-[280px] h-[270px] object-cover"
                             onError={e => {
