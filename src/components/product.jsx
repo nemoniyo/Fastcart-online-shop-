@@ -48,7 +48,7 @@ export default function Product({ wish, setWish }) {
 
                     return (
                         <div key={element.id} className="border hoverArticle border-[whitesmoke] shadow-lg p-[20px] relative">
-                            <img src={`http://37.27.29.18:8002/images/${element.image}`} alt="Image product" className="w-[280px] h-[270px] object-cover" />
+                            <img src={`https://store-api.softclub.tj/images/${element.image}`} alt="Image product" className="w-[280px] h-[270px] object-cover" />
                             <div className='hoverAdd absolute flex items-center justify-center w-[280px] top-[18px] transition-all duration-500 z-20'>
                                 <button onClick={() => dispatch(postCart(element.id))} className='bg-[transparent] hover:backdrop-blur-2xl hover:text-[whitesmoke] cursor-pointer h-[360px] w-full transition-all duration-500 text-[transparent] py-[10px] text-center text-[20px] rounded'>
                                     <div className='flex flex-col justify-center items-center gap-[10px]'>
