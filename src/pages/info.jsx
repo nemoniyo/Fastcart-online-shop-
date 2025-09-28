@@ -40,7 +40,7 @@ const Info = () => {
 							return (
 								<SwiperSlide key={index} className='relative'>
 									<img
-										src={`http://37.27.29.18:8002/images/${img?.images}`}
+										src={`https://store-api.softclub.tj/images/${img?.images}`}
 										className='w-full object-cover rounded-lg shadow-xl'
 										onError={e => {
 											e.target.src = '/default-product.png'
@@ -53,7 +53,7 @@ const Info = () => {
 				</div>
 				<div className='flex justify-center'>
 					<img
-						src={`http://37.27.29.18:8002/images/${productDataById?.images?.[0]?.images}`}
+						src={`https://store-api.softclub.tj/images/${productDataById?.images?.[0]?.images}`}
 						alt={productDataById?.productName}
 						className='w-[500px] lg:h-[500px] h-[280px] mt-[50px] lg:mt-[20px] mb-3'
 						onError={e => {
@@ -72,7 +72,7 @@ const Info = () => {
 							return (
 								<SwiperSlide key={index} className='flex justify-center'>
 									<img
-										src={`http://37.27.29.18:8002/images/${img.images}`}
+										src={`https://store-api.softclub.tj/images/${img.images}`}
 										className='w-[70px] h-[70px] object-cover rounded-lg border border-gray-200 shadow-sm cursor-pointer hover:scale-105 transition-transform'
 										onError={e => {
 											e.target.src = '/default-product.png'

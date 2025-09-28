@@ -15,9 +15,11 @@ import skidka from "../assets/images/Discount percent.png";
 import { Heart } from 'lucide-react';
 import { Eye } from 'lucide-react';
 import { ShoppingCart } from 'lucide-react';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 
-export default function Home({wish, setWish}) {
+export default function Home({ wish, setWish }) {
     const dispatch = useDispatch();
     const { data, category } = useSelector((state) => state.counter);
     const [likedProductIds, setLikedProductIds] = useState([]);
@@ -73,7 +75,7 @@ export default function Home({wish, setWish}) {
                 <CountdownTimer />
             </div>
             <div>
-                <Product wish={wish} setWish={setWish}  />
+                <Product wish={wish} setWish={setWish} />
             </div>
             <div className="flex gap-[30px] items-center lg:pl-[80px] pl-[20px] lg:py-[40px] py-[20px]">
                 <img src={redLine} alt="redLine" className="w-[20px] h-[40px]" />
@@ -83,7 +85,43 @@ export default function Home({wish, setWish}) {
                 <h1 className="text-[38px] font-[600] lg:pl-[80px] max-md:text-[28px] max-md:pl-0">Browse By Category</h1>
             </div>
             <div>
-                
+                <div className='w-[80%] m-auto'>
+                    <Swiper
+                        spaceBetween={40}
+                        slidesPerView={6}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1.5,
+                                spaceBetween: 30,
+                            },
+                            640: {
+                                slidesPerView: 3,
+                            },
+                            1024: {
+                                slidesPerView: 6,
+                            },
+                        }}
+                        className='mySwiper mt-10'
+                    >
+                        <div className=''>
+                            {Array.isArray(category) && category.map((element) => (
+                                <SwiperSlide key={element.id}>
+                                    <div className='p-[40px] border-[2px] border-gray-300 text-center rounded-[5px] px-[5px] hover:bg-[#DB4444] hover:border-none'>
+                                        {element.categoryImage && (
+                                            <img
+                                                src={`https://store-api.softclub.tj/images/${element.categoryImage}`}
+                                                alt={element.categoryName}
+                                                className='mx-auto dark:invert '
+                                            />
+                                        )}
+                                        <p className='pt-[10px]'>{element.categoryName}</p>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+
+                        </div>
+                    </Swiper>
+                </div>
             </div>
 
 
@@ -95,7 +133,7 @@ export default function Home({wish, setWish}) {
                 <h1 className="text-[38px] font-[600] lg:pl-[80px] max-md:text-[28px] max-md:pl-0">Best Selling Products</h1>
             </div>
             <div>
-                <Product wish={wish} setWish={setWish}/>
+                <Product wish={wish} setWish={setWish} />
             </div>
             <div className="flex justify-center">
                 <BannerTwo />
